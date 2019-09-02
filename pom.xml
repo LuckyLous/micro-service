@@ -13,6 +13,8 @@
         <module>micro-service-provider-1001</module>
         <module>micro-service-consumer-80</module>
         <module>micro-service-eureka-server-2001</module>
+        <module>micro-service-eureka-server-2002</module>
+        <module>micro-service-eureka-server-2003</module>
     </modules>
 
     <properties>
