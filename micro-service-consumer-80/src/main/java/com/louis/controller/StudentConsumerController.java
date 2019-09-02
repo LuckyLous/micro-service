@@ -18,7 +18,12 @@ public class StudentConsumerController {
     @Resource
     private RestTemplate restTemplate;
 
-    private static final String HOST = "http://localhost:2001/eureka/";
+//    private static final String HOST = "http://localhost:2001/eureka/";
+
+    /**
+     * 指定的微服务应用名称
+     */
+    private static final String PRE_HOST = "http://MICRO-SERVICE-STUDENT";
 
     /**
      * 添加或者修改学生信息
@@ -27,7 +32,7 @@ public class StudentConsumerController {
      */
     @PostMapping(value="/save")
     public boolean save(Student student){
-        return restTemplate.postForObject(HOST + "/student/save", student, Boolean.class);
+        return restTemplate.postForObject(PRE_HOST + "/student/save", student, Boolean.class);
     }
 
     /**
@@ -36,7 +41,7 @@ public class StudentConsumerController {
      */
     @GetMapping(value="/list")
     public List<Student> list(){
-        return restTemplate.getForObject(HOST + "/student/list", List.class);
+        return restTemplate.getForObject(PRE_HOST + "/student/list", List.class);
     }
 
     /**
@@ -45,7 +50,7 @@ public class StudentConsumerController {
      */
     @GetMapping(value="/get/{id}")
     public Student get(@PathVariable("id") Integer id){
-        return restTemplate.getForObject(HOST + "/student/get/"+id, Student.class);
+        return restTemplate.getForObject(PRE_HOST + "/student/get/"+id, Student.class);
     }
 
     /**
@@ -55,7 +60,7 @@ public class StudentConsumerController {
     @GetMapping(value="/delete/{id}")
     public boolean delete(@PathVariable("id") Integer id){
         try{
-            restTemplate.getForObject(HOST + "/student/delete/"+id, Boolean.class);
+            restTemplate.getForObject(PRE_HOST + "/student/delete/"+id, Boolean.class);
             return true;
         }catch(Exception e){
             return false;
