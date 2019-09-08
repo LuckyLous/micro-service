@@ -13,6 +13,7 @@
         <module>micro-service-provider-1001</module>
         <module>micro-service-provider-1002</module>
         <module>micro-service-provider-1003</module>
+        <module>micro-service-provider-hystrix-1004</module>
         <module>micro-service-consumer-80</module>
         <module>micro-service-student-consumer-feign-80</module>
         <module>micro-service-eureka-server-2001</module>

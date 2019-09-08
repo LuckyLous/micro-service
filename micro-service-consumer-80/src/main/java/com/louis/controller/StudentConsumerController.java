@@ -6,6 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lu
@@ -65,6 +66,12 @@ public class StudentConsumerController {
         }catch(Exception e){
             return false;
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    @GetMapping(value="/getInfo")
+    public Map<String, Object> getInfo() throws InterruptedException {
+        return  restTemplate.getForObject(PRE_HOST + "/student/getInfo", Map.class);
     }
 
 }
