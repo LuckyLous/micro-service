@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Student Feign接口客户端
  * @author lu
  * @create 2019-09-03 23:50
  */
-@FeignClient(value = "MICRO-SERVICE-STUDENT")
+@FeignClient(value = "MICRO-SERVICE-STUDENT", fallbackFactory = StudentClientFallbackFactory.class)
 public interface StudentClientService {
 
     /**
@@ -45,5 +46,11 @@ public interface StudentClientService {
      */
     @GetMapping(value="/student/delete/{id}")
     boolean delete(@PathVariable("id") Integer id);
+
+    /**
+     * 获取信息
+     */
+    @GetMapping(value = "/getInfo")
+    Map<String, Object> getInfo();
 
 }

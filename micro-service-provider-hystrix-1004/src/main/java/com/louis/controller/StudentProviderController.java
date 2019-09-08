@@ -2,11 +2,9 @@ package com.louis.controller;
 
 import com.louis.entity.Student;
 import com.louis.service.StudentService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -70,21 +68,9 @@ public class StudentProviderController {
     }
 
     @GetMapping(value = "/getInfo")
-    @HystrixCommand(fallbackMethod = "getInfoFallback")
     public Map<String, Object> getInfo() throws InterruptedException {
-        Thread.sleep(4000);
-//        Thread.sleep(200);
-        Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("code", 200);
-        resultMap.put("data", "business data");
-        return resultMap;
-    }
-
-    public Map<String, Object> getInfoFallback() throws InterruptedException {
-        Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("code", 500);
-        resultMap.put("data", "server error, please try later");
-        return resultMap;
+        Thread.sleep(500);
+        return studentService.getInfo();
     }
 
 }

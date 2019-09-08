@@ -1,6 +1,7 @@
 package com.louis.service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lu
@@ -33,5 +34,10 @@ public interface BaseService<T> {
      */
     List<T> list();
 
+    /**
+     * 获取信息
+     * @return
+     */
+    Map<String, Object> getInfo();
 
 }

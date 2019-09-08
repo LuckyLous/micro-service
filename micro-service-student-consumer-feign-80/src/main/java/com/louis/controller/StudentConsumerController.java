@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lu
@@ -55,4 +56,8 @@ public class StudentConsumerController {
         return studentClientService.delete(id);
     }
 
+    @GetMapping(value="/getInfo")
+    public Map<String,Object> getInfo() {
+        return studentClientService.getInfo();
+    }
 }

@@ -14,9 +14,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @EnableEurekaClient
 @EnableFeignClients
-public class StudentConsumerApplication_80 {
+public class StudentConsumerFeignApplication_80 {
 
     public static void main(String[] args) {
-        SpringApplication.run(StudentConsumerApplication_80.class, args);
+        SpringApplication.run(StudentConsumerFeignApplication_80.class, args);
     }
 }

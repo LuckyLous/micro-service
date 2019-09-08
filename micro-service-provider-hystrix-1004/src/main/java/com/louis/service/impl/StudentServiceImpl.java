@@ -6,7 +6,9 @@ import com.louis.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lu
@@ -37,4 +39,13 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements Stud
     public List<Student> list() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public Map<String, Object> getInfo() {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("code", 200);
+        resultMap.put("data", "business data");
+        return resultMap;
+    }
+
 }
