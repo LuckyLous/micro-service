@@ -42,7 +42,7 @@ public class StudentClientFallbackFactory implements FallbackFactory<StudentClie
             public Map<String, Object> getInfo() {
                 Map<String, Object> resultMap = new HashMap<>();
                 resultMap.put("code", 500);
-                resultMap.put("data", "server error, please try later");
+                resultMap.put("data", "server error, please try later -- common");
                 return resultMap;
             }
         };

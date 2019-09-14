@@ -14,10 +14,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @SpringBootApplication
-public class StudentProviderHystrixApplication_1004 {
+public class StudentProviderHystrixApplication_1005 {
 
     public static void main(String[] args) {
-        SpringApplication.run(StudentProviderHystrixApplication_1004.class, args);
+        SpringApplication.run(StudentProviderHystrixApplication_1005.class, args);
     }
 
 }
